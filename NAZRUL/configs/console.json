@@ -6,9 +6,9 @@
     "warn": "yellow",
     "available": "blue, red, yellow, white, green, blueBright",
     "editNames": {
-      "success": "• X10 IN RUNNING •",
-      "error":   "• X10 IN ERROR   •",
-      "warn":    "• X10 IN WARNING •"
+      "success": "NAZRUL RUNNING",
+      "error":   "NAZRUL ERROR",
+      "warn":    "NAZRUL WARNING"
     }
   },
   "logger": {
@@ -19,10 +19,10 @@
       "evntLoader": "blue"
     },
     "strings": {
-      "cmdStarter": "• X10 INPORTING COMMANDS •",
-      "evntStarter": "• X10 INPORTING EVENTS •",
-      "cmdLoader": "• X10 COMMAND •",
-      "evntLoader": "• X10 EVENT  •"
+      "cmdStarter": "NAZRUL INPORTING COMMANDS",
+      "evntStarter": "NAZRUL INPORTING EVENTS",
+      "cmdLoader": "NAZRUL COMMAND",
+      "evntLoader": "NAZRUL EVENT"
     }
   }
 }
