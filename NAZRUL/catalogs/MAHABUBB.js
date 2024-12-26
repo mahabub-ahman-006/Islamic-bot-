@@ -65,8 +65,8 @@ global.data = new Object({
   allCurrenciesID: new Array(),
   allThreadID: new Array(),
 });
-global.utils = require("./nazruld.js");
-global.loading = require("./nazrulc.js");
+global.utils = require("./MAHABUBD.js");
+global.loading = require("./MAHABUBC.js");
 global.nodemodule = new Object();
 global.config = new Object();
 global.ryuko = new Object();
