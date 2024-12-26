@@ -116,7 +116,7 @@ try {
 }
 var configValue;
 try {
-  global.client.configPath = join(global.client.mainPath, "../../Nazrul.json");
+  global.client.configPath = join(global.client.mainPath, "../../Mahabub.json");
   configValue = require(global.client.configPath);
   logger.loader(`deploying ${chalk.blueBright('MAHABUB_X_RAHMAN')} file`);
 } catch (e) {
@@ -216,15 +216,15 @@ try {
   if (!global.config.PREFIX) {
     logger.error(`please enter your bot prefix in ${chalk.blueBright('Mahabub.json')} file`)
   }
-  if (global.config.author != "Mahabub_x_Rahman") {
+  if (global.config.author != "Mahabub Rahman") {
     logger.error(`detected : author was changed at ${chalk.blueBright('Mahabub.json')}`);
     process.exit(0);
   }
-  if (packages.author != "Mahabub_x_Rahman") {
+  if (packages.author != "Mahabub Rahman") {
     logger.error(`detected : author was changed at ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
-  if (packages.name != "Mahabub_x_Rahman") {
+  if (packages.name != "Mahabub Rahman") {
     logger.error(`detected : project name was changed at ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
@@ -362,7 +362,7 @@ function onBot({ models: botModel }) {
             const event = require(join(global.client.mainPath, '../../scripts/events', ev));
             const { config, onLoad, run } = event;
             if (!config || !config.name || !run) {
-              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is not in the correct format. `, "NAZRUL EVENT");
+              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is not in the correct format. `, "MAHABUB EVENT");
               continue;
             }
 
