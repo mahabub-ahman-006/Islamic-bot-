@@ -1,5 +1,5 @@
 {
-    "name": "NAZRUL",
+    "name": "MAHABUB",
     "version": "5.2.0",
     "description": "simple messenger bot",
     "main": "",
@@ -8,7 +8,7 @@
         "login": "node login",
         "test": "node --trace-warnings --use_strict --async-stack-traces main"
     },
-    "author": "NAZRUL",
+    "author": "MAHABUB",
     "license": "GPL-3.0",
     "dependencies": {
         "aes-js": "latest",
