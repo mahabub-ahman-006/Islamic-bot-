@@ -2,14 +2,14 @@ const { readdirSync, readFileSync, writeFileSync } = require("fs-extra");
 const { join, resolve } = require('path')
 const { execSync } = require('child_process');
 const axios = require('axios')
-const config = require("../../Nazrul.json");
+const config = require("../../Mahabub.json");
 const chalk = require("chalk");
 const listPackage = JSON.parse(readFileSync('../../package.json')).dependencies;
 const packages = JSON.parse(readFileSync('../../package.json'));
 const fs = require("fs");
 const login = require('../system/login/index.js');
 const moment = require("moment-timezone");
-const logger = require("./nazrulc.js");
+const logger = require("./MAHABUC.js");
 const gradient = require("gradient-string");
 const process = require("process");
 const listbuiltinModules = require("module").builtinModules;
@@ -104,7 +104,7 @@ try {
 }
 var ryukoValue;
 try {
-  global.client.ryukoPath = join(global.client.mainPath, "../configs/Nazrul.json");
+  global.client.ryukoPath = join(global.client.mainPath, "../configs/Mahabub.json");
   ryukoValue = require(global.client.ryukoPath);
 } catch (e) {
   return;
@@ -118,15 +118,15 @@ var configValue;
 try {
   global.client.configPath = join(global.client.mainPath, "../../Nazrul.json");
   configValue = require(global.client.configPath);
-  logger.loader(`deploying ${chalk.blueBright('NAZRUL')} file`);
+  logger.loader(`deploying ${chalk.blueBright('MAHABUB_X_RAHMAN')} file`);
 } catch (e) {
-  return logger.loader(`cant read ${chalk.blueBright('NAZRUL')} file`, "error");
+  return logger.loader(`cant read ${chalk.blueBright('MAHABUB_X_RAHMAN')} file`, "error");
 }
 try {
   for (const key in configValue) global.config[key] = configValue[key];
-  logger.loader(`deployed ${chalk.blueBright('NAZRUL')} file`);
+  logger.loader(`deployed ${chalk.blueBright('MAHABUB_X_RAHMAN')} file`);
 } catch (e) {
-  return logger.loader(`can't deploy ${chalk.blueBright('NAZRUL')} file`, "error")
+  return logger.loader(`can't deploy ${chalk.blueBright('MAHABUB_X_RAHMAN')} file`, "error")
 }
 
 var approvedListsValue;
@@ -210,21 +210,21 @@ global.getText = function(...args) {
 
 try {
   if (!global.config.BOTNAME) {
-    logger.error(`please enter your bot name in ${chalk.blueBright('Nazrul.json')} file`);
+    logger.error(`please enter your bot name in ${chalk.blueBright('Mahabub.json')} file`);
     process.exit(0);
   }
   if (!global.config.PREFIX) {
-    logger.error(`please enter your bot prefix in ${chalk.blueBright('Nazrul.json')} file`)
+    logger.error(`please enter your bot prefix in ${chalk.blueBright('Mahabub.json')} file`)
   }
-  if (global.config.author != "NAZRUL") {
-    logger.error(`detected : author was changed at ${chalk.blueBright('Nazrul.json')}`);
+  if (global.config.author != "Mahabub_x_Rahman") {
+    logger.error(`detected : author was changed at ${chalk.blueBright('Mahabub.json')}`);
     process.exit(0);
   }
-  if (packages.author != "NAZRUL") {
+  if (packages.author != "Mahabub_x_Rahman") {
     logger.error(`detected : author was changed at ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
-  if (packages.name != "NAZRUL") {
+  if (packages.name != "Mahabub_x_Rahman") {
     logger.error(`detected : project name was changed at ${chalk.blueBright('package.json')}`);
     process.exit(0);
   }
@@ -233,7 +233,7 @@ try {
 }
 
 try {
-  var appStateFile = resolve(join(global.client.mainPath, "../../Nazrulstate.json"));
+  var appStateFile = resolve(join(global.client.mainPath, "../../Mahabubstate.json"));
   var appState = ((process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER) && (fs.readFileSync(appStateFile, 'utf8'))[0] != "[" && ryuko.encryptSt) ? JSON.parse(global.utils.decryptState(fs.readFileSync(appStateFile, 'utf8'), (process.env.REPL_OWNER || process.env.PROCESSOR_IDENTIFIER))) : require(appStateFile);
   logger.loader(`deployed ${chalk.blueBright('x4state')} file`)
 } catch (e) {
@@ -272,26 +272,26 @@ function onBot({ models: botModel }) {
 
             if (!config?.category) {
               try {
-                throw new Error(`NAZRUL ERROR ${command} category is not in the correct format or empty`);
+                throw new Error(`MAHABUB ERROR ${command} category is not in the correct format or empty`);
               } catch (error) {
                 console.log(chalk.red(error.message));
                 continue;
               }
             }
-            const configures = require(`../../Nazrul.json`);
+            const configures = require(`../../Mahabub.json`);
             if (configures.premium) {
               if (!config?.hasOwnProperty('premium')) {
-                console.log(`NAZRUL ERROR`, chalk.hex("#ff0000")(command) + ` does not have the "premium" property.`);
+                console.log(`MAHABUB ERROR`, chalk.hex("#ff0000")(command) + ` does not have the "premium" property.`);
                 continue;
               }
             }
             if (!config?.hasOwnProperty('prefix')) {
-              console.log(`NAZRUL ERROR`, chalk.hex("#ff0000")(command) + ` does not have the "prefix" property.`);
+              console.log(`MAHABUB ERROR`, chalk.hex("#ff0000")(command) + ` does not have the "prefix" property.`);
               continue;
             }
 
             if (global.client.commands.has(config.name || '')) {
-              console.log(chalk.red(`NAZRUL ERROR  ${chalk.hex("#FFFF00")(command)} module is already deployed.`));
+              console.log(chalk.red(`MAHABUB ERROR  ${chalk.hex("#FFFF00")(command)} module is already deployed.`));
               continue;
             }
             const { dependencies, envConfig } = config;
@@ -321,7 +321,7 @@ function onBot({ models: botModel }) {
                 global.configModule[moduleName][envConfigKey] = global.ryuko[moduleName][envConfigKey] ?? envConfig[envConfigKey];
                 global.ryuko[moduleName][envConfigKey] = global.ryuko[moduleName][envConfigKey] ?? envConfig[envConfigKey];
               }
-              var ryukoPath = require('../configs/Nazrul.json');
+              var ryukoPath = require('../configs/Mahabub.json');
               ryukoPath[moduleName] = envConfig;
               writeFileSync(global.client.ryukoPath, JSON.stringify(ryukoPath, null, 4), 'utf-8');
             }
@@ -375,7 +375,7 @@ function onBot({ models: botModel }) {
             }
 
             if (global.client.events.has(config.name)) {
-              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is already deployed.`, "NAZRUL EVENT ");
+              global.loading.err(`${chalk.hex('#ff7100')(``)} ${chalk.hex("#FFFF00")(ev)} module is already deployed.`, "MAHABUB EVENT ");
               continue;
             }
             if (config.dependencies) {
@@ -408,7 +408,7 @@ function onBot({ models: botModel }) {
               await onLoad(eventData);
             }
             global.client.events.set(config.name, event);
-            global.loading(`${crayon(``)}successfully deployed ${chalk.blueBright(config.name)}`, "NAZRUL EVENT");
+            global.loading(`${crayon(``)}successfully deployed ${chalk.blueBright(config.name)}`, "MAHABUB EVENT");
           }
           catch (err) {
             global.loading.err(`${chalk.hex("#ff0000")('')}${chalk.blueBright(ev)} failed with error : ${err.message}` + `\n`, "event");
@@ -418,14 +418,14 @@ function onBot({ models: botModel }) {
 
         }
       })();
-    console.log(chalk.blue(`\n` + `NAZRUL X10 PROJECT DATA`));
-    global.loading(`${crayon(``)}deployed ${chalk.blueBright(`${global.client.commands.size}`)} commands and ${chalk.blueBright(`${global.client.events.size}`)} events`, "NAZRUL DATA ");
-    global.loading(`${crayon(``)}deployed time : ${chalk.blueBright(((Date.now() - global.client.timeStart) / 1000).toFixed() + 's')}`, "NAZRUL DATA ");
+    console.log(chalk.blue(`\n` + `MAHABUB_X_RAHAMAN PROJECT DATA`));
+    global.loading(`${crayon(``)}deployed ${chalk.blueBright(`${global.client.commands.size}`)} commands and ${chalk.blueBright(`${global.client.events.size}`)} events`, "MAHABUB DATA ");
+    global.loading(`${crayon(``)}deployed time : ${chalk.blueBright(((Date.now() - global.client.timeStart) / 1000).toFixed() + 's')}`, "MAHABUB DATA ");
     const listenerData = {};
     listenerData.api = loginApiData;
     listenerData.models = botModel;
     const listener = require('../system/listen.js')(listenerData);
-    global.custom = require('../../Nazrul.js')({ api: loginApiData });
+    global.custom = require('../../Mahabub.js')({ api: loginApiData });
     global.handleListen = loginApiData.listenMqtt(async (error, message) => {
       if (error) {
         logger.error(error);
@@ -444,10 +444,10 @@ function onBot({ models: botModel }) {
     authentication.Sequelize = Sequelize;
     authentication.sequelize = sequelize;
     const models = require('../system/database/model.js')(authentication);
-    logger(`deployed ${chalk.blueBright('database')} system`, "NAZRUL DATABASE ");
-    logger(`deploying ${chalk.blueBright('login')} system`, "NAZRUL LOGIN 	")
+    logger(`deployed ${chalk.blueBright('database')} system`, "MAHABUB DATABASE ");
+    logger(`deploying ${chalk.blueBright('login')} system`, "MAHABUB LOGIN 	")
     const botData = {};
     botData.models = models;
     onBot(botData);
-  } catch (error) { logger(`can't deploy ${chalk.blueBright('database')} system`, "NAZRUL FAILED ") }
+  } catch (error) { logger(`can't deploy ${chalk.blueBright('database')} system`, "MAHABUB FAILED ") }
 })();
